@@ -1,0 +1,87 @@
+@import '../../../assets/styles/base/mixins';
+
+.authFrom {
+  @include flex(unset, unset, column);
+  gap: var(--space-1);
+  max-width: 460px;
+  width: 100%;
+  margin-top: var(--sapce-10);
+
+  .error {
+    padding: var(--space-1) 0;
+    margin-bottom: var(--space-1);
+    font-size: var(--font-size-sm);
+    color: var(--white-900);
+    text-align: center;
+    background: var(--red-500);
+  }
+
+  .fieldset {
+    position: relative;
+    width: 100%;
+    border: none;
+
+    legend {
+      @include sr-only;
+    }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: var(--space-3);
+      transform: translateY(-50%);
+    }
+
+    input {
+      @include transition-colors;
+      width: 100%;
+      padding: var(--space-4) var(--space-3);
+      padding-left: var(--space-10);
+      border: 1px solid var(--grey-300);
+      border-radius: var(--space-1);
+
+      &:hover,
+      &:focus {
+        outline: none;
+        border-color: var(--purple-500);
+        border-width: 2px;
+        padding: 15px 11px;
+        padding-left: var(--space-10);
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      right: var(--space-3);
+      transform: translateY(-50%);
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  .submitButton {
+    @include transition-colors;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: var(--space-4);
+    margin-top: var(--space-4);
+    font-size: var(--font-size-sm);
+    color: var(--white-900);
+    background-color: var(--purple-500);
+    border: none;
+    border-radius: var(--space-1);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--purple-600);
+    }
+
+    &:disabled {
+      background-color: var(--grey-500);
+      cursor: not-allowed
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import '../../assets/styles/base/mixins';
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  padding: var(--space-4) 0;
+}
+
+.marketplace {
+  @include flex(unset, unset, column);
+  width: 100%;
+  height: 100%;
+
+  .container {
+    @include flex(unset, unset, column);
+    @include container;
+    gap: var(--space-10);
+    flex: 1 1 0%;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .marketplaceSection {
+    @include flex(center, unset, column);
+    gap: var(--space-10);
+    width: 100%;
+    height: 100%;
+  }
+
+  .marketplaceHeader {
+    @include flex(center, space-between, row);
+    width: 100%;
+
+    @include media(sm) {
+      align-items: flex-start;
+      flex-direction: column-reverse;
+      gap: var(--space-4);
+    }
+
+    .search {
+      position: relative;
+      width: 250px;
+
+      @include media(sm) {
+        width: 100%;
+      }
+
+      input {
+        @include transition-colors;
+        width: 100%;
+        height: 40px;
+        padding: var(--space-2) var(--space-3);
+        padding-right: var(--space-6);
+        background: var(--grey-100);
+        border-radius: var(--space-1);
+        border: 1px solid var(--grey-300);
+        border-radius: var(--space-1);
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border-color: var(--purple-500);
+          border-width: 2px;
+          padding: 7px 11px;
+          padding-right: var(--space-6);
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        right: var(--space-2);
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+      }
+
+      .dropdown {
+        position: absolute;
+        top: 45px;
+        left: 0;
+        z-index: var(--z-modal);
+        width: 100%;
+        max-height: 250px;
+        padding: var(--space-3);
+        background-color: var(--grey-100);
+        border-radius: var(--space-1);
+        box-shadow: var(--box-shadow-md);
+        overflow-y: auto;
+        scrollbar-width: thin;
+      
+        strong {
+          font-size: var(--font-size-sm);
+          color: var(--grey-600);
+        }
+      
+        li > ul > li {
+          @include ellipsis(1);
+          @include transition-colors;
+          width: 100%;
+          padding: var(--space-2);
+          border-radius: var(--space-1);
+          cursor: pointer;
+      
+          &:hover {
+            background-color: var(--grey-200);
+          }
+        }
+      }
+    }
+
+    label {
+      @include sr-only;
+    }
+  }
+}

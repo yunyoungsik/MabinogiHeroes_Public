@@ -1,0 +1,75 @@
+@import '../../../../assets/styles/base/mixins';
+
+.profileDropdown {
+  @include flex(unset, unset, column);
+  gap: var(--space-5);
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: var(--z-tooltip);
+  width: 250px;
+  padding: var(--space-4);
+  background-color: var(--white-900);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--space-2);
+  box-shadow: var(--box-shadow-sm);
+
+  .profile {
+    @include flex(unset, unset, column);
+    gap: var(--space-1);
+    width: 100%;
+  }
+
+  .name {
+    @include flex(center, space-between, row);
+    gap: var(--space-1);
+    overflow: hidden;
+
+    button {
+      background-color: var(--white-900);
+      cursor: pointer;
+    }
+  }
+
+  .username {
+    @include ellipsis(1);
+    font-weight: var(--font-weight-700);
+    max-width: 180px;
+    font-size: var(--font-size-base);
+  }
+}
+
+.editBox {
+  @include flex(flex-end, unset, column);
+  gap: var(--space-1);
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding: var(--space-1) var(--space-2);
+    background-color: var(--grey-100);
+  }
+}
+
+.email {
+  @include flex(center, space-between, row);
+  font-size: var(--font-size-sm);
+  color: var(--grey-500);
+
+  p {
+    @include ellipsis(1);
+    max-width: 160px;
+  }
+
+  button {
+    font-size: var(--font-size-sm);
+    color: var(--grey-500);
+    background-color: var(--white-900);
+    cursor: pointer;
+  }
+}
+
+.buttonGroup {
+  @include flex(flex-end, flex-end, row);
+  gap: var(--space-1);
+}

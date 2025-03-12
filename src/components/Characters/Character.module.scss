@@ -1,0 +1,48 @@
+@import '../../assets/styles/base/mixins';
+
+.main {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  padding: var(--space-4) 0;
+
+  .container {
+    @include container;
+    @include flex(unset, unset, column);
+    width: 100%;
+    height: 100%;
+    gap: var(--space-10);
+  }
+
+  .content {
+    @include flex(unset, space-between, row);
+    width: 100%;
+    height: 100%;
+    gap: var(--space-10);
+
+    @include media(sm) {
+      flex-direction: column;
+    }
+  }
+}
+
+.notFound {
+  @include flex(center, center, column);
+  width: 100%;
+  flex: 1;
+
+  .logo {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-700);
+    color: var(--purple-500);
+  }
+
+  p {
+    color: var(--grey-500);
+  }
+
+  span {
+    font-size: var(--font-size-sm);
+    color: var(--grey-400);
+  }
+}

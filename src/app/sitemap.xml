@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 메인 페이지 -->
+  <url>
+    <loc>https://mhon.kr/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 유저 페이지 -->
+  <url>
+    <loc>https://mhon.kr/user/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 랭킹 페이지 -->
+  <url>
+    <loc>https://mhon.kr/ranking</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 마켓플레이스 -->
+  <url>
+    <loc>https://mhon.kr/marketplace</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 인챈트 -->
+  <url>
+    <loc>https://mhon.kr/enchant</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 상한계산기 -->
+  <url>
+    <loc>https://mhon.kr/raid</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+    <!-- 통계 -->
+  <url>
+    <loc>https://mhon.kr/statistics</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 공지사항 목록 -->
+  <url>
+    <loc>https://fcon.kr/notice</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 개별 공지사항 페이지 -->
+  <url>
+    <loc>https://fcon.kr/notice/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 약관 페이지 -->
+  <url>
+    <loc>https://mhon.kr/policies/agreement</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- 개인정보 처리방침 페이지 -->
+  <url>
+    <loc>https://mhon.kr/policies/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

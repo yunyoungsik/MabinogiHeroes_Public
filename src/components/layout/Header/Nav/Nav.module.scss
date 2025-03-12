@@ -1,0 +1,71 @@
+@import '../../../../assets/styles/base/mixins';
+
+.nav {
+  @include flex(center, unset, row);
+  position: static;
+  z-index: var(--z-header);
+  width: 100%;
+  height: auto;
+
+  @include media(md) {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    display: none;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--white-900);
+
+    &.active {
+      display: block;
+    }
+  }
+
+  // sm 이상에서는 항상 보이도록 보장
+  @media screen and (min-width: calc(var(--breakpoint-sm) + 1px)) {
+    display: flex !important;
+  }
+
+  .list {
+    @include flex(center, unset, row);
+
+    @include media(md) {
+      @include flex(center, center, column);
+      gap: var(--space-1);
+      width: 100%;
+      height: 100%;
+      font-size: var(--font-size-xl);
+
+      li {
+        padding: var(--space-1);
+      }
+    }
+  }
+
+  .item {
+    @include transition-colors;
+    padding: var(--space-2);
+    text-align: center;
+    font-weight: var(--font-weight-500);
+    color: var(--grey-600);
+
+    &:hover,
+    &.active {
+      font-weight: var(--font-weight-700);
+      color: var(--purple-500);
+    }
+  }
+}
+
+.menu {
+  display: none;
+  padding: var(--space-2);
+
+  @include media(md) {
+    display: block;
+  }
+
+  // sm 이상에서는 항상 안보이도록 보장
+  @media screen and (min-width: calc(var(--breakpoint-sm) + 1px)) {
+    display: none !important;
+  }
+}

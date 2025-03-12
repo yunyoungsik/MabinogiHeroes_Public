@@ -1,0 +1,33 @@
+.profileIcon {
+  position: relative;
+  width: 1.75rem; // 7 * 0.25rem
+  height: 1.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+
+  .initial {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem; // text-xs
+    font-weight: 600; // font-semibold
+  }
+
+  .shine {
+    position: absolute;
+    inset: 0;
+    width: 25%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.36);
+    transition: transform 0.5s ease-in-out;
+    transform: skewX(-45deg) translateX(-300%);
+  }
+
+  &:hover .shine {
+    transform: skewX(-45deg) translateX(600%);
+  }
+}

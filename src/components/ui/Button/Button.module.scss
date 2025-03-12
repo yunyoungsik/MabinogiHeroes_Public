@@ -1,0 +1,65 @@
+@import '../../../assets/styles/base/mixins';
+
+.textButton {
+  @include transition-colors;
+  height: 32px;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--grey-600);
+  background-color: var(--white-900);
+  border-radius: 16px;
+  cursor: pointer;
+
+  &.active {
+    font-weight: var(--font-weight-700);
+    color: var(--grey-900);
+    background-color: var(--grey-100);
+  }
+}
+
+.linkLineButton,
+.lineButton {
+  @include transition-colors;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-1);
+  word-break: keep-all;
+  color: var(--grey-500);
+  border: 1px solid var(--grey-200);
+  background-color: var(--white-900);
+  border-radius: var(--space-1);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--grey-500);
+    background-color: var(--grey-100);
+  }
+}
+
+.linkColorButton,
+.colorButton {
+  @include transition-colors;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-1);
+  word-break: keep-all;
+  border: 1px solid transparent;
+  border-radius: var(--space-1);
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-bg-color) !important;
+    color: var(--hover-color) !important;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+
+.iconButton {
+  padding: 0 var(--space-3);
+}

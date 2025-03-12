@@ -1,0 +1,118 @@
+@import '../../../assets/styles/base/mixins';
+
+.customChart {
+  .title {
+    @include flex(unst, unset, column);
+    margin-bottom: var(--space-2);
+
+    h2 {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-700);
+    }
+
+    span {
+      padding: var(--space-1) 0;
+      font-size: var(--font-size-sm);
+      color: var(--grey-500);
+    }
+  }
+
+  .chartContainer {
+    @include flex(center, center, row);
+    width: 100%;
+    height: 100%;
+    padding: var(--space-4);
+    gap: var(--gutter);
+    background-color: var(--grey-50);
+    border-radius: var(--space-2);
+
+    @include media(sm) {
+      flex-direction: column;
+    }
+
+    &.line {
+      background-color: transparent;
+    }
+
+    .chart {
+      position: relative;
+      width: 220px;
+      height: 220px;
+
+      .total {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-700);
+      }
+    }
+
+    .lineChart {
+      width: 100%;
+      height: 230px;
+    }
+
+    .labelContainer {
+      .label {
+        display: grid;
+        grid-template-rows: repeat(5, 1fr); /* 세로로 5개씩 */
+        grid-auto-flow: column; /* 열 방향으로 채우기 */
+        column-gap: var(--space-2);
+        row-gap: var(--space-1);
+
+        @include media(sm) {
+          grid-template-rows: repeat(7, 1fr); /* 세로로 3개씩 */
+        }
+
+        .labelItem {
+          @include flex(center, unset, row);
+          font-size: var(--font-size-sm);
+        }
+
+        .dot {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin-right: var(--space-1);
+          border-radius: var(--space-1);
+        }
+
+        .name {
+          color: var(--grey-700);
+          font-weight: var(--font-weight-700);
+        }
+
+        .value {
+          font-size: var(--font-size-xs);
+          font-weight: var(--font-weight-500);
+          color: var(--grey-500);
+        }
+      }
+    }
+  }
+}
+
+.customTooltip {
+  @include flex(unset, unset, column);
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  background-color: var(--white-900);
+  border: 1px solid var(--grey-100);
+  border-radius: var(--space-1);
+  box-shadow: var(--box-shadow-md);
+
+  h4 {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-500);
+    color: var(--grey-700);
+  }
+
+  p {
+    font-weight: var(--font-weight-700);
+    line-height: var(--line-height-none);
+  }
+}

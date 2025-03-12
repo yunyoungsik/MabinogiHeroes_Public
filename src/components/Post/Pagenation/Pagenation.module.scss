@@ -1,0 +1,45 @@
+@import '../../../assets/styles/base/mixins';
+
+.nav {
+  @include flex(center, center, unset);
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      @include flex(center, center, unset);
+      width: 30px;
+      height: 30px;
+      padding: var(--space-2);
+      color: var(--grey-600);
+      font-weight: var(--font-weight-500);
+      background-color: var(--white-900);
+      border-radius: var(--space-1);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--grey-100);
+      }
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: var(--white-900);
+        }
+      }
+    }
+  }
+
+  .active {
+    color: var(--grey-800);
+    background-color: var(--grey-200);
+
+    &:hover {
+      background-color: var(--grey-200);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../../../assets/styles/base/mixins';
+
+.textBanner {
+  width: 100%;
+  background-color: var(--purple-500);
+
+  @include media(md) {
+    display: none;
+  }
+
+  .container {
+    @include container;
+    @include flex(center, space-between, row);
+    position: relative;
+    z-index: var(--z-header);
+    height: 40px;
+  }
+
+  a {
+    font-size: var(--font-size-sm);
+    color: var(--grey-200);
+  }
+
+  button {
+    width: 16px;
+    height: 16px;
+  }
+}

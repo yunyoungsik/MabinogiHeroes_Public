@@ -1,0 +1,27 @@
+@import '../../assets/styles/base/mixins';
+
+.main {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  padding: var(--space-4) 0;
+
+  .container {
+    @include container;
+    @include flex(unset, unset, column);
+    width: 100%;
+    height: 100%;
+    gap: var(--space-10);
+  }
+
+  .content {
+    @include flex(unset, space-between, row);
+    width: 100%;
+    height: 100%;
+    gap: var(--space-10);
+
+    @include media(sm) {
+      flex-direction: column;
+    }
+  }
+}

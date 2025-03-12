@@ -1,0 +1,27 @@
+@import '../../../../assets/styles/base/mixins';
+
+.userProfile {
+  position: relative;
+}
+
+.loginBtn {
+  padding: var(--space-2) var(--space-4);
+  display: block;
+  line-height: var(--line-height-none);
+ @include transition-colors;
+  border-radius: var(--space-1);
+
+  &:hover {
+    color: var(--white-900);
+    background-color: var(--purple-500);
+  }
+
+  // @include media(sm) {
+  //   display: none;
+  // }
+
+   // sm 이상에서는 항상 보보이도록 보장
+  //  @media screen and (min-width: calc(var(--breakpoint-sm) + 1px)) {
+  //   display: block !important;
+  // }
+}

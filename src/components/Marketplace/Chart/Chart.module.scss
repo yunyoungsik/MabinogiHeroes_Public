@@ -1,0 +1,96 @@
+@import '../../../assets/styles/base/mixins';
+
+.chart {
+  flex: 1 1 0%;
+  min-height: 300px;
+}
+
+.chartHeader {
+  @include flex(unset, unset, column);
+  gap: var(--space-2);
+
+  h2 {
+    font-size: var(--font-size-sm);
+    color: var(--grey-700);
+  }
+
+  .price {
+    @include flex(center, unset, row);
+    p {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-700);
+      color: var(--grey-800);
+      line-height: 1;
+    }
+  }
+
+  .changePercentage {
+    @include flex(center, unset, row);
+    gap: var(--space-1);
+    font-size: var(--font-size-sm);
+
+    .date {
+      color: var(--grey-700);
+    }
+  }
+}
+
+.error {
+  @include flex(center, center, column);
+  min-height: 300px;
+  flex: 1 1 0%;
+
+  h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-700);
+    color: var(--grey-300);
+  }
+
+  p {
+    font-size: var(--font-size-lg);
+    color: var(--grey-500);
+  }
+
+  span {
+    font-size: var(--font-size-sm);
+    color: var(--grey-400);
+  }
+}
+
+.logo {
+  font-weight: var(--font-weight-700);
+  color: var(--grey-300);
+}
+
+.customToolTip {
+  @include flex(unset, unset, column);
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  position: relative;
+  z-index: 1000;
+  font-size: var(--font-size-sm);
+  background-color: var(--white-900);
+  border: 1px solid var(--grey-100);
+  border-radius: var(--space-1);
+  box-shadow: var(--box-shadow-md);
+
+  .date {
+    font-size: var(--font-size-xs);
+    color: var(--grey-600);
+  }
+
+  .typeBox {
+    @include flex(unset, unset, column);
+    gap: var(--space-1);
+  }
+
+  .type {
+    @include flex(center, space-between, row);
+    gap: var(--space-6);
+  }
+
+  .price {
+    font-weight: var(--font-weight-500);
+    color: var(--grey-800);
+  }
+}
